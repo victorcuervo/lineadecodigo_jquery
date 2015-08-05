@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Copiar Elementos entre Listas</title>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script>
+
+$(document).on('ready', function(){
+	
+	$('#listaOrigen li').on('click', function (){
+		$(this).css('background', 'white');
+		$(this).appendTo('#listaDestino');
+		$(this).off('click');
+	});
+	
+	/* Alternativa 
+	  $('#listaOrigen li').one('click', function (){
+	  $(this).css('background', 'white');
+	  $(this).appendTo('#listaDestino');
+	});
+	*/
+
+	$('#listaOrigen li').on('mouseover', function (){
+		$(this).css('background', 'orange');
+		$(this).css('cursor', 'pointer');
+	});
+
+	$('#listaOrigen li').on('mouseout', function (){
+		$(this).css('background', 'white');
+	});
+
+});
+	
+</script>
+
+</head>
+<body>
+
+<h1>Copiar Elementos entre Listas</h1>
+
+<h2>Lista Origen</h2>
+<ol id="listaOrigen">
+<li> Elemento 1</li>
+<li> Elemento 2</li>
+<li> Elemento 3</li>
+<li> Elemento 4</li>
+</ol>
+
+<h2>Lista Destino</h2>
+
+<ol id="listaDestino">
+</ol>
+
+<br><br>
+<hr>
+Art&iacute;culo disponible en: <a href="http://lineadecodigo.com/jquery/xxx/">http://lineadecodigo.com/jquery/xxx/</a><br/>
+<a href="http://lineadecodigo.com" title="Linea de Codigo">lineadecodigo.com</a>
+
+
+</body>
+</html>
